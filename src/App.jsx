@@ -2,6 +2,7 @@ import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+
 import LoaderApp from "./LoaderApp/LoaderApp";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
@@ -15,7 +16,7 @@ const RegistrationPage = lazy(() =>
 );
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
-const NotFoudPage = lazy(() => import("./pages/NotFoudPage/NotFoudPage"));
+const NotFoudPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 import "./App.css";
 

@@ -2,7 +2,7 @@
 
 import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 
 import clsx from "clsx";
 import css from "./Contact.module.css";

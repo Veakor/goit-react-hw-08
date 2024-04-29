@@ -6,8 +6,9 @@ export const instance = axios.create({
 });
 
 export const setToken = (token) => {
-  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
+    if (!token) return thunkApi.rejectWithValue(null);
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  };
 
 export const clearToken = () =>
   (instance.defaults.headers.common.Authorization = "");

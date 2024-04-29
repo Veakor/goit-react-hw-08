@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import clsx from "clsx";
 
-import style from "./NotFoudPage.module.css";
+import style from "./NotFoundPage.module.css";
 
 const NotFoudPage = () => {
   const [timer, setTimer] = useState(0);

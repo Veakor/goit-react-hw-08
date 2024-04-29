@@ -1,6 +1,7 @@
 
 
 import { useDispatch } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 import { deleteContact } from "../../redux/contactsOps";
 
 import clsx from "clsx";
@@ -10,6 +11,7 @@ const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
   const onDeleteContact = (contactId) => {
+    toast.success("Contact deleted successfully!");
     dispatch(deleteContact(contactId));
   };
   return (
@@ -25,6 +27,7 @@ const Contact = ({ contact }) => {
       >
         Delete
       </button>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

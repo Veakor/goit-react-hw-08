@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { nanoid } from "@reduxjs/toolkit";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 import { addContact } from "../../redux/contactsOps";
 
 import clsx from "clsx";
@@ -24,17 +24,15 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const onAddContact = (values, actions) => {
-    const finalContact = {
-      ...values,
-      id: nanoid(),
-    };
-
-    dispatch(addContact(finalContact));
-
+    console.log(true);
+    toast.success("Contact added successfully!");
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
+
   return (
+    <>
     <Formik
       initialValues={FORM_INITIAL_VALUES}
       validationSchema={mailBoxSchema}
@@ -65,6 +63,8 @@ const ContactForm = () => {
         </button>
       </Form>
     </Formik>
+    <Toaster position="top-right" reverseOrder={false} />
+    </>
   );
 };
 

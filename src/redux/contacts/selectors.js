@@ -7,8 +7,8 @@ export const isError = (state) => state.contacts.error;
 import { createSelector } from "@reduxjs/toolkit";
 
 
-export const itemsContacts = (state) => state.contacts.items;
-export const filtersContacts = (state) => state.filters.name;
+const itemsContacts = (state) => state.contacts.items;
+ const filtersContacts = (state) => state.filters.name;
 
 export const selectFilteredContacts = createSelector(
   [itemsContacts, filtersContacts],
@@ -20,3 +20,5 @@ export const selectFilteredContacts = createSelector(
     );
   }
 );
+
+export { itemsContacts, filtersContacts };
